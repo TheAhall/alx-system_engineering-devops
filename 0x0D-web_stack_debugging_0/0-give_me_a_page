@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-# Start Apache so as to return a
-# page conatining Hello Holberton
-service apache2 start
+#Configures nginx to listen on port 80
+
+link="/etc/nginx/sites-enabled/default"
+target="/etc/nginx/sites-available/default"
+sudo rm $link
+sudo ln -s $target $link
+sudo service nginx restart
