@@ -1,0 +1,51 @@
+                +-----------------+
+                |    DNS Server   |
+                +-----------------+
+                        |
+            +-----------|------------+
+            |           |            |
+    +-------v-------+   |    +-------v-------+
+    |   Resolver    |   |    |   Web Server   |
+    +---------------+   |    +---------------+
+            |           |            |
+            |    +------v------+     |
+            |    | Load Balancer|     |
+            |    +------+-------+     |
+            |           |            |
+            |    +------v-------+    |
+            |    |   Firewall    |    |
+            |    +------|-------+    |
+            |           |            |
+            |    +------v-------+    |
+            |    | HTTPS/SSL    |    |
+            |    +------+-------+    |
+            |           |            |
+            |    +------v-------+    |
+            |    | Application  |    |
+            |    |   Server     |    |
+            |    +------+-------+    |
+            |           |            |
+            |    +------v-------+    |
+            |    |   Database    |    |
+            |    +---------------+    |
+            |                         |
+            +-------------------------+
+
+
+Explanation:
+
+   -DNS Resolution: The browser sends a DNS request to the DNS server to resolve the domain name "www.google.com" into an IP address.
+
+   -Resolver: The resolver on the client machine receives the IP address from the DNS server.
+
+   -Load Balancer: The client's request is directed to the appropriate server by a load balancer, ensuring even distribution of traffic.
+
+   -Firewall: The traffic passes through a firewall, which filters and monitors incoming and outgoing traffic to enforce security policies.
+
+   -HTTPS/SSL Encryption: The communication between the client and server is encrypted using HTTPS/SSL, ensuring secure data transmission.
+
+   -Web Server: The request reaches the web server, which serves the requested web page to the client.
+
+   -Application Server: The web server interacts with the application server, which generates the web page dynamically and retrieves data from the database.
+
+   -Database: The application server communicates with the database to fetch or store data required for generating the web page.
